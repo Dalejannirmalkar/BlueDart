@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.nirmlkar.dalejan.bluedart.Confirm">
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/name"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/ecitemname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/primary"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+
+                android:id="@+id/ecboyid"
+                android:inputType="textEmailSubject"
+                style="@style/editdetailstyle1"
+              />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/secondary"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/ecpickup"
+                style="@style/editdetailstyle1"
+                />
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/secondary1"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/ecdrop"
+                style="@style/editdetailstyle1"
+                />
+
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/flagg"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/ecflag"
+                android:focusable="false"
+                style="@style/editdetailstyle1"
+                />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btcboysubmit"
+                style="@style/btnloginstyle"
+                android:text="@string/deliver"
+                android:clickable="false"
+                />
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btcboycancle"
+                style="@style/btnloginstyle"
+                android:text="@string/back"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

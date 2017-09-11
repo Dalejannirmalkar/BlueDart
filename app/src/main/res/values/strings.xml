@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BlueDart</string>
+    <string name="action_settings">Settings</string>
+    <string name="deliverystatus">Delivery Status</string>
+    <string name="submit">Submit</string>
+    <string name="cancle">Cancle</string>
+    <string name="progress">Progress</string>
+    <string name="droplocation">Enter Drop Location</string>
+    <string name="pickuplocation">Enter Pickup Location</string>
+    <string name="enterboyname">Enter Boy Name</string>
+    <string name="enteritemname">Enter Item Name</string>
+    <string name="deliveryboyname">Enter Delivery Boy Name</string>
+    <string name="deliveryboyemail">Enter Delivery Boy Email</string>
+    <string name="deliveryboypass">Enter Delivery Boy Password</string>
+    <string name="enteremailid">Enter Email ID</string>
+    <string name="enterpassword">Enter Password</string>
+    <string name="todo">TODO</string>
+    <string name="login">Login</string>
+    <string name="item_name">Item name</string>
+    <string name="back">Back</string>
+    <string name="boy_name">Boy Name</string>
+    <string name="deliver">Delivered</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_deliveryboy_screen">DeliveryboyScreen</string>
+</resources>

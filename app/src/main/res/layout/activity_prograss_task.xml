@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.nirmlkar.dalejan.bluedart.PrograssTask">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/name"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/eitemdname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enteritemname" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+      <Spinner
+          android:id="@+id/sboyid"
+          style="@style/inputlayoutstyle"/>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/secondary"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/eitempick"
+                style="@style/editdetailstyle"
+                android:hint="@string/pickuplocation" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/graduation"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+
+                android:id="@+id/eitemdrop"
+                style="@style/editdetailstyle"
+                android:hint="@string/droplocation"
+                />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/diploma"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/eitemstatus"
+                style="@style/editdetailstyle"
+                android:hint="@string/deliverystatus"
+                android:focusable="false"
+                android:text="@string/progress"
+                />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="wrap_content"
+          android:layout_marginTop="40dp"
+          android:layout_height="wrap_content">
+          <Button
+              android:layout_weight="1"
+              android:id="@+id/btitemsubmit"
+              style="@style/btnloginstyle"
+              android:text="@string/submit"
+              />
+          <Button
+              android:layout_weight="1"
+              android:id="@+id/btitemcancle"
+              style="@style/btnloginstyle"
+              android:text="@string/cancle"
+               />
+
+      </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

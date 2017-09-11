@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.nirmlkar.dalejan.bluedart.AddDeliveryBoy">
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/name"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/eboydname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/deliveryboyname" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/primary"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+
+                android:id="@+id/eboyemail"
+                android:inputType="textEmailSubject"
+                style="@style/editdetailstyle"
+                android:hint="@string/deliveryboyemail" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/secondary"
+            style="@style/inputlayoutstyle">
+
+            <EditText
+                android:id="@+id/eboypass"
+                style="@style/editdetailstyle"
+                android:hint="@string/deliveryboypass" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btboysubmit"
+                style="@style/btnloginstyle"
+                android:text="@string/submit"
+                />
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btboycancle"
+                style="@style/btnloginstyle"
+                android:text="@string/cancle"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

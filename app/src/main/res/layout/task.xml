@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/btnloginstylerec"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/progresstasksignal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/greensignal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:contentDescription="@string/todo" />
+    <LinearLayout
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/listitem"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:text="@string/item_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="NestedWeights" />
+        <TextView
+            android:id="@+id/listboy"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:text="@string/boy_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</LinearLayout>
