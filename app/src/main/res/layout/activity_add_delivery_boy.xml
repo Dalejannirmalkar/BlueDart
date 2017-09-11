@@ -31,7 +31,7 @@
             <EditText
 
                 android:id="@+id/eboyemail"
-                android:inputType="textEmailSubject"
+                android:inputType="textEmailAddress"
                 style="@style/editdetailstyle"
                 android:hint="@string/deliveryboyemail" />
 

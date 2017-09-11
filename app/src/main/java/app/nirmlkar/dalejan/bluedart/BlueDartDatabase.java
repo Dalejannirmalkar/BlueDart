@@ -111,6 +111,16 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
         db.insert(TABLE_DELIVERY_BOY_DETAILS, null, values);
         db.close();
     }
+    void ConfirmItem(String id) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_ITEM_FLAG, "1");
+
+
+        db.update(TABLE_ITEM_DETAILS,values,COLUMN_ITEM_ID+"="+id,null);
+        db.close();
+    }
 
 
     List<DeliveryBoy> getAllDeliveryBoy() {
@@ -235,7 +245,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_ITEM_DETAILS, //Table to query
                 columns,    //columns to return
-                COLUMN_ITEM_BOY_ID +"="+idboy,        //columns for the WHERE clause
+                COLUMN_ITEM_BOY_ID +"="+Integer.parseInt(idboy),        //columns for the WHERE clause
                 null,        //The values for the WHERE clause
                 null,       //group the rows
                 null,       //filter by row groups
@@ -300,6 +310,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
 
                 ItemDetails item;
                 item = new ItemDetails();
+                item.setDetails_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_ID)));
                 item.setItem_name(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_NAME)));
                 item.setBoy_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_BOY_ID)));
                 item.setPickup_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_PICKUP_PLACE)));

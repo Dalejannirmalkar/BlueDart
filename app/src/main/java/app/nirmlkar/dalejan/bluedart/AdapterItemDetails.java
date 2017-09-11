@@ -1,5 +1,7 @@
 package app.nirmlkar.dalejan.bluedart;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import java.util.List;
 
 public class AdapterItemDetails extends RecyclerView.Adapter<AdapterItemDetails.ListItem> {
     private ItemDetails[] itemDetailsa;
+    private Context context;
 
     class ListItem extends RecyclerView.ViewHolder {
 
@@ -19,8 +22,20 @@ public class AdapterItemDetails extends RecyclerView.Adapter<AdapterItemDetails.
         ImageView progressbar;
 
 
-        ListItem(View itemView) {
+        ListItem(final View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position= itemView.getId();
+                    Intent i1=new Intent(context,Confirm.class);
+                    i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i1.putExtra("id",itemDetailsa[position+1].getDetails_id());
+                    context.startActivity(i1);
+
+
+                }
+            });
             itemname = itemView.findViewById(R.id.listitem);
             itemboyname = itemView.findViewById(R.id.listboy);
             progressbar = itemView.findViewById(R.id.progresstasksignal);
@@ -29,7 +44,8 @@ public class AdapterItemDetails extends RecyclerView.Adapter<AdapterItemDetails.
         }
     }
 
-    AdapterItemDetails(List<ItemDetails> itemDetails) {
+    AdapterItemDetails(List<ItemDetails> itemDetails, Context context) {
+        this.context=context;
         itemDetailsa = new ItemDetails[itemDetails.toArray().length];
         int i = 0;
         for (ItemDetails i1 : itemDetails) {

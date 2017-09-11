@@ -22,4 +22,5 @@
     <string name="deliver">Delivered</string>
     <string name="logout">Logout</string>
     <string name="title_activity_deliveryboy_screen">DeliveryboyScreen</string>
+    <string name="complete">Complete</string>
 </resources>

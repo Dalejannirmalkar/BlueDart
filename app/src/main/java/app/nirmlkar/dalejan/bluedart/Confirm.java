@@ -4,14 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Confirm extends AppCompatActivity {
 
     EditText etitemname, etitemboy, etpickup, etdrop, etflag;
     Button btdeliver, btback;
     BlueDartDatabase blueDartDatabase;
+    String itemid="";
 
 
     @Override
@@ -29,26 +32,45 @@ public class Confirm extends AppCompatActivity {
         btback=findViewById(R.id.btcboycancle);
         Intent i1=getIntent();
         String id=i1.getStringExtra("id");
+
         blueDartDatabase=new BlueDartDatabase(getApplicationContext());
 
-         if (blueDartDatabase.getperticularitem(id) != null) {
+          if (blueDartDatabase.getperticularitem(id) != null) {
             for (ItemDetails dget : blueDartDatabase.getperticularitem(id)) {
-                Log.d("dddd","jjj");
+                itemid=dget.getDetails_id();
                 etitemname.setText(dget.getItem_name());
-                Log.d("dddd",dget.getItem_name()+"jjj");
-                etitemname.setText(dget.getBoy_id());
-                Log.d("dddd","jjj");
-                etitemname.setText(dget.getPickup_place());
-                Log.d("dddd","jjj");
-                etitemname.setText(dget.getDrop_place());
-                Log.d("dddd","jjj");
+                etitemboy.setText(dget.getBoy_id());
+                etpickup.setText(dget.getPickup_place());
+                etdrop.setText(dget.getDrop_place());
+
                 if (dget.getFlag().equalsIgnoreCase("0")){
                     etflag.setText(R.string.progress);
-                    btdeliver.isClickable();
+                    btdeliver.setEnabled(true);
+                }
+                else {
+                    etflag.setText(R.string.complete);
+
                 }
 
             }
         }
+
+        btdeliver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Task is completed",Toast.LENGTH_SHORT).show();
+                blueDartDatabase.ConfirmItem(itemid);
+                startActivity(new Intent(getApplicationContext(),Login.class));
+                finish();
+            }
+        });
+         btback.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 startActivity(new Intent(getApplicationContext(),Login.class));
+                 finish();
+             }
+         });
 
     }
 }

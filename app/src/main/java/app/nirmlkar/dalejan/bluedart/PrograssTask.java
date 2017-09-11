@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class PrograssTask extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class PrograssTask extends AppCompatActivity implements  View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     EditText etitemName, etPickupPlace, etDropPlace;
     Spinner spinner;
@@ -21,6 +21,7 @@ public class PrograssTask extends AppCompatActivity implements AdapterView.OnIte
     Button btitemsubmit, btitemcancle;
     String boyid;
     String[] boys = {};
+    String[] itemDetails = {};
 
 
     @Override
@@ -49,7 +50,6 @@ public class PrograssTask extends AppCompatActivity implements AdapterView.OnIte
             }
 
         }
-        String[] itemDetails = {};
 
         if (blueDartDatabase.getAllItemProcess() != null) {
             itemDetails = new String[blueDartDatabase.getAllItemProcess().toArray().length];
@@ -64,10 +64,10 @@ public class PrograssTask extends AppCompatActivity implements AdapterView.OnIte
 
         }
         if (boys != null) {
-            for (int j = 0; j < boys.length; j++) {
+            for (int j = 0; j < itemDetails.length; j++) {
                 if (itemDetails != null) {
                     if (itemDetails[j].equalsIgnoreCase(boys[j])) {
-                        boys[j] = null;
+                        boys[j] = "notAvailable";
                     }
                 }
 
@@ -76,24 +76,20 @@ public class PrograssTask extends AppCompatActivity implements AdapterView.OnIte
 
         spinner = findViewById(R.id.sboyid);
 
-        spinner.setOnItemClickListener(this);
         btitemcancle.setOnClickListener(this);
         btitemsubmit.setOnClickListener(this);
 
 
         if (boys != null) {
-            ArrayAdapter<String> aa = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, boys);
+           ArrayAdapter<String> aa = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, boys);
             aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(aa);
+
         }
+        spinner.setOnItemSelectedListener(this);
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        boyid = boys[i];
-
-    }
 
     @Override
     public void onClick(View view) {
@@ -117,6 +113,8 @@ public class PrograssTask extends AppCompatActivity implements AdapterView.OnIte
                         itemDetails.setBoy_id(boyid);
                         itemDetails.setFlag("0");
                         blueDartDatabase.AddItem(itemDetails);
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        finish();
 
                     }
 
@@ -129,6 +127,21 @@ public class PrograssTask extends AppCompatActivity implements AdapterView.OnIte
                 break;
             }
         }
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (i){
+
+                default:
+                    boyid=boys[i];
+
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }

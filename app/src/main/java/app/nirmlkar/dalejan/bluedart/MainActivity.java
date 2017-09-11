@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (blueDartDatabase.getAllItemProcess() != null) {
 
-            adapterItemDetails = new AdapterItemDetails(blueDartDatabase.getAllItemProcess());
+            adapterItemDetails = new AdapterItemDetails(blueDartDatabase.getAllItemProcess(),getApplicationContext());
 
         }
 

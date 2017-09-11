@@ -27,12 +27,10 @@ public class DeliveryboyScreen extends AppCompatActivity {
         String user = i1.getStringExtra("who");
         Toast.makeText(this, user + "", Toast.LENGTH_SHORT).show();
         blueDartDatabase = new BlueDartDatabase(getApplicationContext());
-        if (blueDartDatabase.getAllItemProcess() != null) {
-
-            if (blueDartDatabase.getperticularBoy(user) != null) {
+        if (blueDartDatabase.getAllItemProcess().toArray().length != 0) {
 
                 adapterboyGet = new AdapterboyGet(blueDartDatabase.getperticularBoy(user),getApplicationContext());
-            }
+
         }
 
         recycleview = findViewById(R.id.deliverylist);

@@ -1,10 +1,8 @@
 package app.nirmlkar.dalejan.bluedart;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,7 @@ import java.util.List;
 
 
 public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork> {
-    Context context;
+    private Context context;
 
     private ItemDetails[] itemDetailsa;
 
@@ -30,11 +28,11 @@ public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork>
                 @Override
                 public void onClick(View view) {
                   int position= itemView.getId();
-                    Log.d("hhhhhhhh",position+"ll");
                     Intent i1=new Intent(context,Confirm.class);
                     i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    i1.putExtra("id",itemDetailsa[position+1].getDetails_id());
+                    i1.putExtra("id",itemDetailsa[position+1].getDetails_id()+"");
                     context.startActivity(i1);
+
 
 
                 }
@@ -70,6 +68,7 @@ public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork>
 
         } else {
             holder.progressbar.setImageResource(R.drawable.greensignal);
+
         }
 
 

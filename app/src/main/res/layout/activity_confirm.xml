@@ -17,6 +17,7 @@
 
             <EditText
                 android:id="@+id/ecitemname"
+                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                  />
@@ -33,6 +34,7 @@
 
                 android:id="@+id/ecboyid"
                 android:inputType="textEmailSubject"
+                android:focusable="false"
                 style="@style/editdetailstyle1"
               />
 
@@ -46,6 +48,7 @@
 
             <EditText
                 android:id="@+id/ecpickup"
+                android:focusable="false"
                 style="@style/editdetailstyle1"
                 />
 
@@ -57,6 +60,7 @@
 
             <EditText
                 android:id="@+id/ecdrop"
+                android:focusable="false"
                 style="@style/editdetailstyle1"
                 />
 
@@ -86,7 +90,7 @@
                 android:id="@+id/btcboysubmit"
                 style="@style/btnloginstyle"
                 android:text="@string/deliver"
-                android:clickable="false"
+               android:enabled="false"
                 />
             <Button
                 android:layout_weight="1"

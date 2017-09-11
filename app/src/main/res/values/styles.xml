@@ -6,11 +6,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:spinnerDropDownItemStyle">@style/myspinner</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="myspinner" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -52,6 +57,7 @@
     </style>
 
     <style name="inputlayoutstyle">
+
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginRight">20dp</item>
@@ -60,7 +66,6 @@
     </style>
 
     <style name="editdetailstyle">
-        <item name="android:inputType">number</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
