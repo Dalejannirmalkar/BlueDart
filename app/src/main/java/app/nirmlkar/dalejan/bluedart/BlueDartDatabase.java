@@ -82,7 +82,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-
+//heloo
 
     void AddItem(ItemDetails item) {
         SQLiteDatabase db = this.getWritableDatabase();
