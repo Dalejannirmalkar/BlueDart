@@ -35,6 +35,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     private static final String COLUMN_DELIVERY_BOY_NAME = "boy_name";
     private static final String COLUMN_DELIVERY_BOY_EMAIL = "boy_email";
     private static final String COLUMN_DELIVERY_BOY_PASSWORD = "boy_password";
+
     private static final String CREATE_ITEM_DETAILS_TABLE = "CREATE TABLE " + TABLE_ITEM_DETAILS + "("
             + COLUMN_ITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_ITEM_NAME + " TEXT,"
             + COLUMN_ITEM_BOY_ID + " TEXT," + COLUMN_ITEM_PICKUP_PLACE + " TEXT," + COLUMN_ITEM_DROP_PLACE + " TEXT,"
@@ -259,6 +260,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
 
                 ItemDetails item;
                 item = new ItemDetails();
+                item.setDetails_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_ID)));
                 item.setItem_name(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_NAME)));
                 item.setBoy_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_BOY_ID)));
                 item.setPickup_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_PICKUP_PLACE)));

@@ -3,6 +3,7 @@ package app.nirmlkar.dalejan.bluedart;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -65,7 +66,7 @@ public class PrograssTask extends AppCompatActivity implements  View.OnClickList
         }
         if (boys != null) {
             for (int j = 0; j < itemDetails.length; j++) {
-                if (itemDetails != null) {
+                if (itemDetails[j] != null) {
                     if (itemDetails[j].equalsIgnoreCase(boys[j])) {
                         boys[j] = "notAvailable";
                     }
