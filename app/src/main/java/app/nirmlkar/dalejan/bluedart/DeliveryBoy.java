@@ -9,11 +9,11 @@ class DeliveryBoy {
     private String boy_email;
     private String boy_password;
 
-    public String getBoy_id() {
+    String getBoy_id() {
         return boy_id;
     }
 
-    public void setBoy_id(String boy_id) {
+    void setBoy_id(String boy_id) {
         this.boy_id = boy_id;
     }
 

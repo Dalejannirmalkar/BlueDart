@@ -1,10 +1,8 @@
 package app.nirmlkar.dalejan.bluedart;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +24,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         blueDartDatabase = new BlueDartDatabase(getApplicationContext());
 
-        Log.d("jjjjjjj99", "kjagfgkgj");
 
         int i = 0;
 
@@ -72,8 +69,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         finish();
                     }
                 }
+                if (email.equalsIgnoreCase("")) {
+                    Toast.makeText(getApplicationContext(), "Email and Password not match", Toast.LENGTH_SHORT).show();
 
-                if (dBoyEmail.length != 0) {
+                }
+                else {
+
+                    if(dBoyEmail.length != 0) {
 
                     for (int i = 0; i < dBoyEmail.length; i++) {
 
@@ -89,14 +91,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                             }
                         }
+                        else {
+                            Toast.makeText(getApplicationContext(), "Email and Password not match", Toast.LENGTH_SHORT).show();
+
+                        }
                     }
 
                 }
-
-                if (email.equalsIgnoreCase("")) {
-                    Toast.makeText(getApplicationContext(), "Email and Password not match", Toast.LENGTH_SHORT).show();
-
                 }
+
+
                 break;
             }
 
