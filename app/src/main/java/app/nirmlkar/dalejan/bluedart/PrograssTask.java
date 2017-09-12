@@ -86,7 +86,7 @@ public class PrograssTask extends AppCompatActivity implements  View.OnClickList
             aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(aa);
 
-        }
+        }//wkjdh
         spinner.setOnItemSelectedListener(this);
 
     }
