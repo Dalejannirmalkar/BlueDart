@@ -107,6 +107,9 @@ public class PrograssTask extends AppCompatActivity implements  View.OnClickList
                     Toast.makeText(getApplicationContext(), "Fill all the Details", Toast.LENGTH_SHORT).show();
                 } else {
                     if (boyid != null) {
+                        if (boyid.equalsIgnoreCase("notAvailable")) {
+                            Toast.makeText(getApplicationContext(), "Choose boy id for delivery", Toast.LENGTH_SHORT).show();
+                        }else{
                         ItemDetails itemDetails = new ItemDetails();
                         itemDetails.setItem_name(itemname);
                         itemDetails.setPickup_place(itempick);
@@ -117,7 +120,7 @@ public class PrograssTask extends AppCompatActivity implements  View.OnClickList
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         finish();
 
-                    }
+                    }}
 
                 }
                 break;
