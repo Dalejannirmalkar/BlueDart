@@ -52,17 +52,8 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        Log.d("jjjjjjj", "kjagfgkgj");
-
-
-        Log.d("jjjjjjj11", "kjagfgkgj");
 
         db.execSQL(CREATE_ITEM_DETAILS_TABLE);
-
-        Log.d("jjjjjjj22", "kjagfgkgj");
-
-
-        Log.d("jjjjjjj33", "kjagfgkgj");
 
         db.execSQL(CREATE_DELIVERY_BOY_DETAILS_TABLE);
 
@@ -168,7 +159,6 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
 
 
     List<ItemDetails> getAllItemProcess() {
-        Log.d("jjjjjjj44", "kjagfgkgj");
 
         // array of columns to fetch
         String[] columns = {
@@ -184,9 +174,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
                 COLUMN_ITEM_ID + " ASC";
         List<ItemDetails> itemlist = new ArrayList<>();
 
-        Log.d("jjjjjjj04", "kjagfgkgj");
         SQLiteDatabase db = this.getReadableDatabase();
-        Log.d("jjjjjjj005", "kjagfgkgj");
 
         Cursor cursor = db.query(TABLE_ITEM_DETAILS, //Table to query
                 columns,    //columns to return
@@ -197,7 +185,6 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
                 sortOrder); //The sort order
 
 
-        Log.d("jjjjjjj006", "kjagfgkgj");
 
 
         // Traversing through all rows and adding to list
