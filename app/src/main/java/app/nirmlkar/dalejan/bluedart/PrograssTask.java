@@ -66,9 +66,12 @@ public class PrograssTask extends AppCompatActivity implements  View.OnClickList
         if (boys != null) {
             for (int j = 0; j < itemDetails.length; j++) {
                 if (itemDetails[j] != null) {
-                    if (itemDetails[j].equalsIgnoreCase(boys[j])) {
-                        boys[j] = "notAvailable";
+                    for (int i=0;i<boys.length;i++){
+                        if (itemDetails[j].equalsIgnoreCase(boys[i])) {
+                            boys[i] = "notAvailable";
+                        }
                     }
+
                 }
 
             }

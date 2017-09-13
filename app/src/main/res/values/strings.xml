@@ -23,4 +23,6 @@
     <string name="logout">Logout</string>
     <string name="title_activity_deliveryboy_screen">DeliveryboyScreen</string>
     <string name="complete">Complete</string>
+    <string name="GOOGLE_MAPS_API_KEY">AIzaSyBYYr7Zr7g2r-wra9xtoozADTznningCjM</string>
+    <string name="title_activity_location_action">Map</string>
 </resources>

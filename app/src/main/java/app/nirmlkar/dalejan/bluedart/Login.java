@@ -62,11 +62,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                 if (email.equalsIgnoreCase("dalejan")) {
                     if (pass.equals("dalejan")) {
-                        Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(new Intent(getApplicationContext(),LocationAction.class));
+                       /* Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
                         i1.putExtra("who", "manager");
                         startActivity(i1);
                         Toast.makeText(getApplicationContext(), "Login Sucssesfull as manager", Toast.LENGTH_SHORT).show();
-                        finish();
+                        finish();*/
                     }
                 }
                 if (email.equalsIgnoreCase("")) {
@@ -91,10 +92,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                             }
                         }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Email and Password not match", Toast.LENGTH_SHORT).show();
 
-                        }
                     }
 
                 }

@@ -24,19 +24,7 @@ public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork>
         ImageView progressbar;
          Listwork(final View itemView) {
             super(itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                  int position= itemView.getId();
-                    Intent i1=new Intent(context,Confirm.class);
-                    i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    i1.putExtra("id",itemDetailsa[position+1].getDetails_id()+"");
-                    context.startActivity(i1);
 
-
-
-                }
-            });
              itemname = itemView.findViewById(R.id.listitem);
              itemboyname = itemView.findViewById(R.id.listboy);
              progressbar = itemView.findViewById(R.id.progresstasksignal);
@@ -59,10 +47,25 @@ public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork>
     }
 
     @Override
-    public void onBindViewHolder(AdapterboyGet.Listwork holder, int position) {
+    public void onBindViewHolder(AdapterboyGet.Listwork holder, final int position) {
 
         holder.itemname.setText(itemDetailsa[position].getItem_name());
         holder.itemboyname.setText(itemDetailsa[position].getBoy_id());
+        holder.itemView.setTag(position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //create your own action
+                //using view.getTag() you can get the position of item clicked
+
+                int p = (int) view.getTag();
+                Intent i1=new Intent(context,Confirm.class);
+                i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i1.putExtra("who","delivery");
+                i1.putExtra("id",itemDetailsa[p].getDetails_id()+"");
+                context.startActivity(i1);
+            }
+        });
         if (Integer.parseInt(itemDetailsa[position].getFlag()) == 0) {
             holder.progressbar.setImageResource(R.drawable.redsignal);
 

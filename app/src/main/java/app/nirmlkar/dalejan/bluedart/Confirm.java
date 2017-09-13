@@ -31,6 +31,7 @@ public class Confirm extends AppCompatActivity {
         btback=findViewById(R.id.btcboycancle);
         Intent i1=getIntent();
         String id=i1.getStringExtra("id");
+        String who=i1.getStringExtra("who");
 
         blueDartDatabase=new BlueDartDatabase(getApplicationContext());
 
@@ -44,7 +45,18 @@ public class Confirm extends AppCompatActivity {
 
                 if (dget.getFlag().equalsIgnoreCase("0")){
                     etflag.setText(R.string.progress);
-                    btdeliver.setEnabled(true);
+                    if (who.equalsIgnoreCase("delivery")){
+                        btdeliver.setEnabled(true);
+                        btdeliver.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(getApplicationContext(),"Task is completed",Toast.LENGTH_SHORT).show();
+                                blueDartDatabase.ConfirmItem(itemid);
+                                startActivity(new Intent(getApplicationContext(),Login.class));
+                                finish();
+                            }
+                        });
+                    }
                 }
                 else {
                     etflag.setText(R.string.complete);
@@ -54,15 +66,8 @@ public class Confirm extends AppCompatActivity {
             }
         }
 
-        btdeliver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Task is completed",Toast.LENGTH_SHORT).show();
-                blueDartDatabase.ConfirmItem(itemid);
-                startActivity(new Intent(getApplicationContext(),Login.class));
-                finish();
-            }
-        });
+
+
          btback.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
