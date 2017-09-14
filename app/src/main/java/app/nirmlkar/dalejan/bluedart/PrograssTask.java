@@ -127,9 +127,11 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
         }
 
         spinner = findViewById(R.id.sboyid);
+
         ArrayAdapter<String> aa1 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, item_n);
         aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         etitemName.setAdapter(aa1);
+
         btitemcancle.setOnClickListener(this);
         btitemsubmit.setOnClickListener(this);
 
