@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     Button btLogin;
@@ -17,12 +18,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     String[] dBoyPass;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         blueDartDatabase = new BlueDartDatabase(getApplicationContext());
+
 
 
         int i = 0;
@@ -50,6 +53,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+
     @Override
     public void onClick(View view) {
 
@@ -62,12 +66,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                 if (email.equalsIgnoreCase("dalejan")) {
                     if (pass.equals("dalejan")) {
-                        startActivity(new Intent(getApplicationContext(),LocationAction.class));
-                       /* Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
                         i1.putExtra("who", "manager");
                         startActivity(i1);
                         Toast.makeText(getApplicationContext(), "Login Sucssesfull as manager", Toast.LENGTH_SHORT).show();
-                        finish();*/
+                        finish();
                     }
                 }
                 if (email.equalsIgnoreCase("")) {

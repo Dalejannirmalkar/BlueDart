@@ -11,9 +11,11 @@ import android.widget.Toast;
 public class Confirm extends AppCompatActivity {
 
     EditText etitemname, etitemboy, etpickup, etdrop, etflag;
-    Button btdeliver, btback;
+    Button btdeliver, btback,btlocation;
     BlueDartDatabase blueDartDatabase;
     String itemid="";
+    double latitude,longitude;
+
 
 
     @Override
@@ -29,6 +31,7 @@ public class Confirm extends AppCompatActivity {
 
         btdeliver=findViewById(R.id.btcboysubmit);
         btback=findViewById(R.id.btcboycancle);
+        btlocation=findViewById(R.id.btcboylocation);
         Intent i1=getIntent();
         String id=i1.getStringExtra("id");
         String who=i1.getStringExtra("who");
@@ -42,6 +45,11 @@ public class Confirm extends AppCompatActivity {
                 etitemboy.setText(dget.getBoy_id());
                 etpickup.setText(dget.getPickup_place());
                 etdrop.setText(dget.getDrop_place());
+
+                latitude=dget.getLatitude();
+                longitude=dget.getLongitude();
+                LocationAction.latitude=latitude;
+                LocationAction.longitude=longitude;
 
                 if (dget.getFlag().equalsIgnoreCase("0")){
                     etflag.setText(R.string.progress);
@@ -67,6 +75,15 @@ public class Confirm extends AppCompatActivity {
         }
 
 
+        btlocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i1=new Intent(getApplicationContext(),LocationAction.class);
+
+                startActivity(i1);
+
+            }
+        });
 
          btback.setOnClickListener(new View.OnClickListener() {
              @Override

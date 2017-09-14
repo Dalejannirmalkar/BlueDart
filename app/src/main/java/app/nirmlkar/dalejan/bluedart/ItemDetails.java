@@ -10,6 +10,25 @@ class ItemDetails {
     private String drop_place;
     private String flag;
 
+    private double latitude;
+    private double longitude;
+
+    double getLatitude() {
+        return latitude;
+    }
+
+     void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+     double getLongitude() {
+        return longitude;
+    }
+
+     void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
     String getDetails_id() {
         return details_id;
     }

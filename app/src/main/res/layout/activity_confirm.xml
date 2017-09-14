@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +19,7 @@
                 android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                 />
+                android:inputType="text" />
 
 
         </android.support.design.widget.TextInputLayout>
@@ -50,7 +49,7 @@
                 android:id="@+id/ecpickup"
                 android:focusable="false"
                 style="@style/editdetailstyle1"
-                />
+                android:inputType="text" />
 
 
         </android.support.design.widget.TextInputLayout>
@@ -62,7 +61,7 @@
                 android:id="@+id/ecdrop"
                 android:focusable="false"
                 style="@style/editdetailstyle1"
-                />
+                android:inputType="text" />
 
 
         </android.support.design.widget.TextInputLayout>
@@ -74,7 +73,7 @@
                 android:id="@+id/ecflag"
                 android:focusable="false"
                 style="@style/editdetailstyle1"
-                />
+                android:inputType="text" />
 
 
         </android.support.design.widget.TextInputLayout>
@@ -88,14 +87,20 @@
             <Button
                 android:layout_weight="1"
                 android:id="@+id/btcboysubmit"
-                style="@style/btnloginstyle"
+                style="@style/btnloginstyle1"
                 android:text="@string/deliver"
                android:enabled="false"
                 />
             <Button
                 android:layout_weight="1"
+                android:id="@+id/btcboylocation"
+                style="@style/btnloginstyle1"
+                android:text="@string/location"
+                />
+            <Button
+                android:layout_weight="1"
                 android:id="@+id/btcboycancle"
-                style="@style/btnloginstyle"
+                style="@style/btnloginstyle1"
                 android:text="@string/back"
                 />
 

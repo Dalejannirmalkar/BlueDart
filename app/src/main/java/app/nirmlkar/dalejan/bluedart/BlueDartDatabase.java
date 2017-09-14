@@ -25,6 +25,8 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     private static final String COLUMN_ITEM_ID = "item_id";
     private static final String COLUMN_ITEM_NAME = "item_name";
     private static final String COLUMN_ITEM_BOY_ID = "item_boy_id";
+    private static final String COLUMN_ITEM_LATITUDE = "item_latitude";
+    private static final String COLUMN_ITEM_LONGITUDE = "item_longitude";
     private static final String COLUMN_ITEM_PICKUP_PLACE = "item_pickup_place";
     private static final String COLUMN_ITEM_DROP_PLACE = "user_gr";
     private static final String COLUMN_ITEM_FLAG = "user_pgr";
@@ -37,6 +39,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     private static final String CREATE_ITEM_DETAILS_TABLE = "CREATE TABLE " + TABLE_ITEM_DETAILS + "("
             + COLUMN_ITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_ITEM_NAME + " TEXT,"
             + COLUMN_ITEM_BOY_ID + " TEXT," + COLUMN_ITEM_PICKUP_PLACE + " TEXT," + COLUMN_ITEM_DROP_PLACE + " TEXT,"
+            + COLUMN_ITEM_LATITUDE + " TEXT," + COLUMN_ITEM_LONGITUDE + " TEXT,"
             + COLUMN_ITEM_FLAG + " TEXT" + ")";
 
     private static final String CREATE_DELIVERY_BOY_DETAILS_TABLE = "CREATE TABLE " + TABLE_DELIVERY_BOY_DETAILS + "("
@@ -81,6 +84,8 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
         values.put(COLUMN_ITEM_BOY_ID, item.getBoy_id());
         values.put(COLUMN_ITEM_PICKUP_PLACE, item.getPickup_place());
         values.put(COLUMN_ITEM_DROP_PLACE, item.getDrop_place());
+        values.put(COLUMN_ITEM_LATITUDE,item.getLatitude());
+        values.put(COLUMN_ITEM_LONGITUDE,item.getLongitude());
         values.put(COLUMN_ITEM_FLAG, Integer.parseInt(item.getFlag()));
 
         // Inserting Row
@@ -165,6 +170,8 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
                 COLUMN_ITEM_BOY_ID,
                 COLUMN_ITEM_PICKUP_PLACE,
                 COLUMN_ITEM_DROP_PLACE,
+                COLUMN_ITEM_LATITUDE,
+                COLUMN_ITEM_LONGITUDE,
                 COLUMN_ITEM_FLAG
         };
         // sorting orders
@@ -192,11 +199,14 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
 
                 ItemDetails item;
                 item = new ItemDetails();
+
                 item.setDetails_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_ID)));
                 item.setItem_name(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_NAME)));
                 item.setBoy_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_BOY_ID)));
                 item.setPickup_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_PICKUP_PLACE)));
                 item.setDrop_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_DROP_PLACE)));
+                item.setLatitude(Double.parseDouble(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_LATITUDE))));
+                item.setLongitude(Double.parseDouble(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_LONGITUDE))));
                 item.setFlag(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_FLAG)));
                 // Adding user record to list
                 itemlist.add(item);
@@ -219,6 +229,8 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
                 COLUMN_ITEM_BOY_ID,
                 COLUMN_ITEM_PICKUP_PLACE,
                 COLUMN_ITEM_DROP_PLACE,
+                COLUMN_ITEM_LATITUDE,
+                COLUMN_ITEM_LONGITUDE,
                 COLUMN_ITEM_FLAG
         };
 
@@ -245,11 +257,14 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
 
                 ItemDetails item;
                 item = new ItemDetails();
+
                 item.setDetails_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_ID)));
                 item.setItem_name(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_NAME)));
                 item.setBoy_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_BOY_ID)));
                 item.setPickup_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_PICKUP_PLACE)));
                 item.setDrop_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_DROP_PLACE)));
+                item.setLatitude(Double.parseDouble(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_LATITUDE))));
+                item.setLongitude(Double.parseDouble(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_LONGITUDE))));
                 item.setFlag(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_FLAG)));
                 // Adding user record to list
                 itemlist.add(item);
@@ -271,6 +286,8 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
                 COLUMN_ITEM_BOY_ID,
                 COLUMN_ITEM_PICKUP_PLACE,
                 COLUMN_ITEM_DROP_PLACE,
+                COLUMN_ITEM_LATITUDE,
+                COLUMN_ITEM_LONGITUDE,
                 COLUMN_ITEM_FLAG
         };
 
@@ -297,11 +314,14 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
 
                 ItemDetails item;
                 item = new ItemDetails();
+
                 item.setDetails_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_ID)));
                 item.setItem_name(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_NAME)));
                 item.setBoy_id(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_BOY_ID)));
                 item.setPickup_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_PICKUP_PLACE)));
                 item.setDrop_place(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_DROP_PLACE)));
+                item.setLatitude(Double.parseDouble(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_LATITUDE))));
+                item.setLongitude(Double.parseDouble(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_LONGITUDE))));
                 item.setFlag(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM_FLAG)));
                 // Adding user record to list
                 itemlist.add(item);
