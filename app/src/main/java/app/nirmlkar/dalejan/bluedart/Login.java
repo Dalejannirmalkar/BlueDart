@@ -97,8 +97,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                         finish();
 
                                     }
+                                    else{
+                                        Toast.makeText(getApplicationContext(), R.string.invalid, Toast.LENGTH_SHORT).show();
+                                    }
 
                                 }
+
 
                             }
 

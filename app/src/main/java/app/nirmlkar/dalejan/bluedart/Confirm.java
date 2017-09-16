@@ -81,9 +81,13 @@ public class Confirm extends AppCompatActivity {
         btlocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent i1=new Intent(getApplicationContext(),LocationAction.class);
                 i1.putExtra("who",who);
+                i1.putExtra("lat",String.valueOf(latitude));
+                i1.putExtra("lang",String.valueOf(longitude));
                 startActivity(i1);
+
 
             }
         });

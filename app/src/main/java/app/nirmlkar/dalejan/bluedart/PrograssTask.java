@@ -35,7 +35,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
     String[] boys = {};
     String[] itemDetails = {};
     double latitude;
-    String[] item_n = {R.string.car+"", ""+R.string.bus, R.string.hat+"", R.string.bag+"", ""+R.string.bat};
+
     double longitude;
     private ArrayList<String> permissionsRejected = new ArrayList<>();
     private ArrayList<String> permissions = new ArrayList<>();
@@ -131,13 +131,9 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
         etitemName = findViewById(R.id.eitemdname);
         spinner = findViewById(R.id.sboyid);
 
-        ArrayAdapter<String> aa1 = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner, item_n);
-        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        etitemName.setAdapter(aa1);
 
         btitemcancle.setOnClickListener(this);
         btitemsubmit.setOnClickListener(this);
-
 
         if (boys != null) {
 
@@ -146,8 +142,9 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
             spinner.setAdapter(aa);
 
         }
+
+
         spinner.setOnItemSelectedListener(PrograssTask.this);
-        etitemName.setOnItemSelectedListener(PrograssTask.this);
 
 
 
@@ -177,7 +174,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
                             Log.d("yyyyy","hg");
 
                             ItemDetails itemDetails = new ItemDetails();
-                            itemDetails.setItem_name(itemname);
+                            itemDetails.setItem_name(String.valueOf(etitemName.getSelectedItem()));
                             itemDetails.setPickup_place(itempick);
                             itemDetails.setDrop_place(itemdrop);
                             itemDetails.setBoy_id(boyid);
@@ -209,10 +206,8 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-      boyid= (String) adapterView.getItemAtPosition(i);
-      itemname= (String) adapterView.getItemAtPosition(i);
+    boyid=boys[i];
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 

@@ -39,25 +39,33 @@
     <string name="plsenterpass">Please Enter Password</string>
     <string name="plsenteremail">Please Enter Email</string>
     <string name="car">Car</string>
-    <string name="bus">Bus</string>
-    <string name="hat">Hat</string>
-    <string name="bag">Bag</string>
-    <string name="bat">Bat</string>
-    <string name="shoe">Shoe</string>
-    <string name="laptop">Laptop</string>
-    <string name="bench">Bench</string>
-    <string name="fan">Fan</string>
-    <string name="ac">Ac</string>
-    <string name="earphone">Earphone</string>
-    <string name="guitar">Guitar</string>
-    <string name="soap">Soap</string>
-    <string name="shampoo">Shampoo</string>
-    <string name="bottle">Bottle</string>
+
     <string name="longitude">Longitude:</string>
     <string name="latitude">Latitude:</string>
     <string name="notavail">notAvailable</string>
     <string name="chooseboyid">Choose boy id for delivery</string>
     <string name="fillall">Fill all the Details</string>
     <string name="left">left</string>
+    <string name="country_prompt">Choose a Item</string>
+    <string-array name="boyidd">
+
+
+    </string-array>
+    <string-array name="country_arrays">
+        <item name="bus">Bus</item>
+        <item name="hat">Hat</item>
+        <item name="bag">Bag</item>
+        <item name="bat">Bat</item>
+        <item name="shoe">Shoe</item>
+        <item name="laptop">Laptop</item>
+        <item name="bench">Bench</item>
+        <item name="fan">Fan</item>
+        <item name="ac">Ac</item>
+        <item name="earphone">Earphone</item>
+        <item name="guitar">Guitar</item>
+        <item name="soap">Soap</item>
+        <item name="shampoo">Shampoo</item>
+        <item name="bottle">Bottle</item>
+    </string-array>
 
 </resources>

@@ -21,7 +21,10 @@
             android:layout_marginTop="@dimen/ten"
             android:layout_width="match_parent"
             android:layout_height="@dimen/forty"
-         />
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt"
+
+            />
 
 
 

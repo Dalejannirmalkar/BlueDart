@@ -83,11 +83,7 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
 
     String who;
     double lat,lang;
-public LocationAction(double lat,double lang){
-    this.lat=lat;
-    this.lang=lang;
 
-}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +92,8 @@ public LocationAction(double lat,double lang){
         overridePendingTransition(R.anim.left, R.anim.anim2);
         Intent i1 = getIntent();
         who = i1.getStringExtra("who");
-        Log.d("jjjjjjjj",who);
+        lat=Double.parseDouble(i1.getStringExtra("lat"));
+        lang=Double.parseDouble(i1.getStringExtra("lang"));
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -115,8 +112,8 @@ public LocationAction(double lat,double lang){
     public void onMapReady(GoogleMap googleMap) {
         ArrayList<LatLng> markerPoints = new ArrayList<>();
         mMap = googleMap;
-        LatLng sydney = new LatLng(12.9716, 77.5946);
-        //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(lat, lang);
+         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 16));
 
 
@@ -124,7 +121,7 @@ public LocationAction(double lat,double lang){
             markerPoints.clear();
             mMap.clear();
         }
-        LatLng l1 = new LatLng(12.9576, 77.7442);
+        LatLng l1 = new LatLng(lat, lang);
         LatLng l2 = new LatLng(12.9592, 77.6974);
         markerPoints.add(l1);
         // Adding new item to the ArrayList
@@ -134,13 +131,16 @@ public LocationAction(double lat,double lang){
         MarkerOptions options = new MarkerOptions();
 
         // Setting the position of the marker
-        options.position(l1);
         options.position(l2);
+        options.position(l1);
 
-        if (options.getPosition() == l1) {
+
+        if (options.getPosition()==l1) {
             options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-        } else {
+        }
+        else if (options.getIcon()==null){
             options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+
         }
         // Add new marker to the Google Map Android API V2
         mMap.addMarker(options);
