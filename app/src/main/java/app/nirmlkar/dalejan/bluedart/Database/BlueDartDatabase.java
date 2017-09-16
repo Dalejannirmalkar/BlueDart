@@ -1,4 +1,4 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
+
+import app.nirmlkar.dalejan.bluedart.generic.DeliveryBoy;
+import app.nirmlkar.dalejan.bluedart.generic.ItemDetails;
 
 
 public class BlueDartDatabase extends SQLiteOpenHelper {
@@ -46,7 +49,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
             + COLUMN_DELIVERY_BOY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_DELIVERY_BOY_NAME + " TEXT,"
             + COLUMN_DELIVERY_BOY_EMAIL + " TEXT," + COLUMN_DELIVERY_BOY_PASSWORD + " TEXT" + ")";
 
-    BlueDartDatabase(Context context) {
+    public  BlueDartDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -76,7 +79,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     }
 
 
-    void AddItem(ItemDetails item) {
+    public void AddItem(ItemDetails item) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -94,7 +97,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     }
 
 
-    void AddDeliveryBoy(DeliveryBoy user) {
+    public  void AddDeliveryBoy(DeliveryBoy user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -106,7 +109,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
         db.insert(TABLE_DELIVERY_BOY_DETAILS, null, values);
         db.close();
     }
-    void ConfirmItem(String id) {
+    public   void ConfirmItem(String id) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -118,7 +121,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     }
 
 
-    List<DeliveryBoy> getAllDeliveryBoy() {
+    public   List<DeliveryBoy> getAllDeliveryBoy() {
         // array of columns to fetch
         String[] columns = {
                 COLUMN_DELIVERY_BOY_ID,
@@ -161,7 +164,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     }
 
 
-    List<ItemDetails> getAllItemProcess() {
+    public  List<ItemDetails> getAllItemProcess() {
 
         // array of columns to fetch
         String[] columns = {
@@ -220,7 +223,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
     }
 
 
-    List<ItemDetails> getperticularBoy(String idboy) {
+    public  List<ItemDetails> getperticularBoy(String idboy) {
 
         // array of columns to fetch
         String[] columns = {
@@ -277,7 +280,7 @@ public class BlueDartDatabase extends SQLiteOpenHelper {
         return itemlist;
     }
 
-    List<ItemDetails> getperticularitem(String idboy) {
+    public  List<ItemDetails> getperticularitem(String idboy) {
 
         // array of columns to fetch
         String[] columns = {

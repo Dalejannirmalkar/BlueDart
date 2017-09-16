@@ -9,7 +9,7 @@
 
     android:layout_marginBottom="@dimen/twenty"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="app.nirmlkar.dalejan.bluedart.DeliveryboyScreen"
+    tools:context="app.nirmlkar.dalejan.bluedart.activity.DeliveryboyScreen"
     tools:showIn="@layout/activity_deliveryboy_screen">
 
     <android.support.v7.widget.RecyclerView

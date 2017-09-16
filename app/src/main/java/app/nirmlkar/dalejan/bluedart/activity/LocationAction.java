@@ -1,4 +1,4 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -28,6 +28,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import app.nirmlkar.dalejan.bluedart.DirectionsJSONParser;
+import app.nirmlkar.dalejan.bluedart.R;
 
 /*public class LocationAction extends FragmentActivity implements OnMapReadyCallback {
 

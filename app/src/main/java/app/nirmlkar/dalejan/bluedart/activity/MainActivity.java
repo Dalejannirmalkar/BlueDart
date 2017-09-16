@@ -1,4 +1,4 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.activity;
 
 
 import android.content.Intent;
@@ -15,6 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
+import app.nirmlkar.dalejan.bluedart.Database.BlueDartDatabase;
+import app.nirmlkar.dalejan.bluedart.R;
+import app.nirmlkar.dalejan.bluedart.adapter.AdapterItemDetails;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

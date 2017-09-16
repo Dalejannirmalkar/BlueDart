@@ -1,4 +1,4 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import app.nirmlkar.dalejan.bluedart.activity.Confirm;
+import app.nirmlkar.dalejan.bluedart.ItemDetails;
+import app.nirmlkar.dalejan.bluedart.R;
 
 
 public class AdapterItemDetails extends RecyclerView.Adapter<AdapterItemDetails.ListItem> {

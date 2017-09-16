@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:background="@color/background"
     android:layout_height="match_parent"
-    tools:context="app.nirmlkar.dalejan.bluedart.Confirm">
+    tools:context="app.nirmlkar.dalejan.bluedart.activity.Confirm">
 
     <LinearLayout
         android:layout_marginTop="@dimen/fifty"

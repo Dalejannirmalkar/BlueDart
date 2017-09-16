@@ -1,4 +1,4 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.activity;
 
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
@@ -10,7 +10,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +20,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import app.nirmlkar.dalejan.bluedart.Database.BlueDartDatabase;
+import app.nirmlkar.dalejan.bluedart.location.LocationTrack;
+import app.nirmlkar.dalejan.bluedart.R;
+import app.nirmlkar.dalejan.bluedart.generic.DeliveryBoy;
+import app.nirmlkar.dalejan.bluedart.generic.ItemDetails;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;

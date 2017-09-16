@@ -21,32 +21,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="Delivery Progress"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Login"
+            android:name=".activity.Login"
             android:label="Login" />
         <activity
-            android:name=".PrograssTask"
+            android:name=".activity.PrograssTask"
             android:label="Delivery Details"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".Spalsh">
+        <activity android:name=".activity.Spalsh">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddDeliveryBoy" />
+        <activity android:name=".activity.AddDeliveryBoy" />
         <activity
-            android:name=".DeliveryboyScreen"
+            android:name=".activity.DeliveryboyScreen"
             android:label="@string/title_activity_deliveryboy_screen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Confirm" />
+        <activity android:name=".activity.Confirm" />
 
         <activity
-            android:name=".LocationAction"
+            android:name=".activity.LocationAction"
             android:label="@string/title_activity_location_action" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

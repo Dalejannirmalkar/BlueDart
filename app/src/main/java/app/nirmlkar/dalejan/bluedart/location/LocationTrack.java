@@ -1,4 +1,4 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.location;
 
 import android.annotation.SuppressLint;
 import android.app.Service;

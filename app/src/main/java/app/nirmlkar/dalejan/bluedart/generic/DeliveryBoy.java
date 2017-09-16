@@ -1,43 +1,43 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.generic;
 
 
 
-class DeliveryBoy {
+public class DeliveryBoy {
 
     private String boy_id;
     private String boy_name;
     private String boy_email;
     private String boy_password;
 
-    String getBoy_id() {
+    public String getBoy_id() {
         return boy_id;
     }
 
-    void setBoy_id(String boy_id) {
+    public void setBoy_id(String boy_id) {
         this.boy_id = boy_id;
     }
 
-    String getBoy_name() {
+    public String getBoy_name() {
         return boy_name;
     }
 
-    void setBoy_name(String boy_name) {
+    public void setBoy_name(String boy_name) {
         this.boy_name = boy_name;
     }
 
-    String getBoy_email() {
+    public String getBoy_email() {
         return boy_email;
     }
 
-    void setBoy_email(String boy_email) {
+    public void setBoy_email(String boy_email) {
         this.boy_email = boy_email;
     }
 
-    String getBoy_password() {
+    public String getBoy_password() {
         return boy_password;
     }
 
-    void setBoy_password(String boy_password) {
+    public void setBoy_password(String boy_password) {
         this.boy_password = boy_password;
     }
 }

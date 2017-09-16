@@ -1,4 +1,4 @@
-package app.nirmlkar.dalejan.bluedart;
+package app.nirmlkar.dalejan.bluedart.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import app.nirmlkar.dalejan.bluedart.R;
 
 public class Spalsh extends AppCompatActivity {
 

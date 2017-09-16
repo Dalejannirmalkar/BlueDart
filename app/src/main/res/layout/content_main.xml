@@ -8,7 +8,7 @@
     android:layout_marginBottom="@dimen/twenty"
     android:scrollbars="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="app.nirmlkar.dalejan.bluedart.MainActivity"
+    tools:context="app.nirmlkar.dalejan.bluedart.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
    <android.support.v7.widget.RecyclerView

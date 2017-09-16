@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context="app.nirmlkar.dalejan.bluedart.Spalsh">
+    tools:context="app.nirmlkar.dalejan.bluedart.activity.Spalsh">
 <ImageView
     android:id="@+id/logo"
     android:layout_marginRight="@dimen/twenty"
