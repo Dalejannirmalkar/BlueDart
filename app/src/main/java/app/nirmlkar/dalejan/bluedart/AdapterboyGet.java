@@ -69,6 +69,8 @@ public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork>
         if (Integer.parseInt(itemDetailsa[position].getFlag()) == 0) {
             holder.progressbar.setImageResource(R.drawable.redsignal);
 
+
+
         } else {
             holder.progressbar.setImageResource(R.drawable.greensignal);
 
@@ -81,6 +83,5 @@ public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork>
     public int getItemCount() {
         return itemDetailsa.length;
     }
-
 
 }

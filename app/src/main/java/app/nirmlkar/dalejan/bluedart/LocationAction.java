@@ -1,8 +1,8 @@
 package app.nirmlkar.dalejan.bluedart;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
-import android.location.Location;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.json.JSONObject;
@@ -29,8 +28,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /*public class LocationAction extends FragmentActivity implements OnMapReadyCallback {
 
@@ -83,14 +80,23 @@ this.googleMap=googleMap;
 public class LocationAction extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    ArrayList markerPoints = new ArrayList();
 
+    String who;
+    double lat,lang;
+public LocationAction(double lat,double lang){
+    this.lat=lat;
+    this.lang=lang;
+
+}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_action);
 
-        overridePendingTransition(R.anim.left,R.anim.anim2);
+        overridePendingTransition(R.anim.left, R.anim.anim2);
+        Intent i1 = getIntent();
+        who = i1.getStringExtra("who");
+        Log.d("jjjjjjjj",who);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -98,7 +104,16 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left, R.anim.anim2);
+
+
+    }
+
+    @Override
     public void onMapReady(GoogleMap googleMap) {
+        ArrayList<LatLng> markerPoints = new ArrayList<>();
         mMap = googleMap;
         LatLng sydney = new LatLng(12.9716, 77.5946);
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
@@ -122,10 +137,9 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
         options.position(l1);
         options.position(l2);
 
-        if (options.getPosition()==l1) {
+        if (options.getPosition() == l1) {
             options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
-        }
-        else {
+        } else {
             options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         }
         // Add new marker to the Google Map Android API V2
@@ -133,8 +147,8 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
 
         // Checks, whether start and end locations are captured
         if (markerPoints.size() >= 2) {
-            LatLng origin = (LatLng) markerPoints.get(0);
-            LatLng dest = (LatLng) markerPoints.get(1);
+            LatLng origin = markerPoints.get(0);
+            LatLng dest = markerPoints.get(1);
 
             // Getting URL to the Google Directions API
             String url = getDirectionsUrl(origin, dest);
@@ -176,6 +190,7 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
 
         // Parsing the data in non-ui thread
@@ -198,21 +213,20 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
 
         @Override
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
-            ArrayList points = null;
+            ArrayList<LatLng> points;
             PolylineOptions lineOptions = null;
-            MarkerOptions markerOptions = new MarkerOptions();
 
             for (int i = 0; i < result.size(); i++) {
-                points = new ArrayList();
+                points = new ArrayList<>();
                 lineOptions = new PolylineOptions();
 
                 List<HashMap<String, String>> path = result.get(i);
 
                 for (int j = 0; j < path.size(); j++) {
-                    HashMap point = path.get(j);
+                    HashMap<String, String> point = path.get(j);
 
-                    double lat = Double.parseDouble((String) point.get("lat"));
-                    double lng = Double.parseDouble((String) point.get("lng"));
+                    double lat = Double.parseDouble(point.get("lat"));
+                    double lng = Double.parseDouble(point.get("lng"));
                     LatLng position = new LatLng(lat, lng);
 
                     points.add(position);
@@ -249,30 +263,26 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
         String output = "json";
 
         // Building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
 
 
-        return url;
+        return "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
     }
 
     private String downloadUrl(String strUrl) throws IOException {
         String data = "";
-        InputStream iStream = null;
-        HttpURLConnection urlConnection = null;
-        try {
-            URL url = new URL(strUrl);
+        HttpURLConnection urlConnection;
+        URL url = new URL(strUrl);
 
-            urlConnection = (HttpURLConnection) url.openConnection();
+        urlConnection = (HttpURLConnection) url.openConnection();
 
-            urlConnection.connect();
+        urlConnection.connect();
 
-            iStream = urlConnection.getInputStream();
-
+        try (InputStream iStream = urlConnection.getInputStream()) {
             BufferedReader br = new BufferedReader(new InputStreamReader(iStream));
 
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
 
-            String line = "";
+            String line;
             while ((line = br.readLine()) != null) {
                 sb.append(line);
             }
@@ -284,7 +294,6 @@ public class LocationAction extends FragmentActivity implements OnMapReadyCallba
         } catch (Exception e) {
             Log.d("Exception", e.toString());
         } finally {
-            iStream.close();
             urlConnection.disconnect();
         }
         return data;

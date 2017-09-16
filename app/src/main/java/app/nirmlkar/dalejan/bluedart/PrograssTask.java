@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,7 +35,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
     String[] boys = {};
     String[] itemDetails = {};
     double latitude;
-    String[] item_n = {"Car", "Bus", "Hat", "Bag", "Bat", "Shoe", "Laptop", "Bench", "Bottle", "Shampoo", "Soap", "Guitar", "Earphone", "Ac", "Fan"};
+    String[] item_n = {R.string.car+"", ""+R.string.bus, R.string.hat+"", R.string.bag+"", ""+R.string.bat};
     double longitude;
     private ArrayList<String> permissionsRejected = new ArrayList<>();
     private ArrayList<String> permissions = new ArrayList<>();
@@ -82,7 +83,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
             longitude = locationTrack.getLongitude();
             latitude = locationTrack.getLatitude();
 
-            Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.longitude) + Double.toString(longitude) + getString(R.string.latitude) + Double.toString(latitude), Toast.LENGTH_SHORT).show();
         } else {
 
             locationTrack.showSettingsAlert();
@@ -118,7 +119,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
                 if (itemDetail != null) {
                     for (int i = 0; i < boys.length; i++) {
                         if (itemDetail.equalsIgnoreCase(boys[i])) {
-                            boys[i] = "notAvailable";
+                            boys[i] = getString(R.string.notavail);
                         }
                     }
 
@@ -130,7 +131,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
         etitemName = findViewById(R.id.eitemdname);
         spinner = findViewById(R.id.sboyid);
 
-        ArrayAdapter<String> aa1 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, item_n);
+        ArrayAdapter<String> aa1 = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner, item_n);
         aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         etitemName.setAdapter(aa1);
 
@@ -139,7 +140,8 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
 
 
         if (boys != null) {
-            ArrayAdapter<String> aa = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, boys);
+
+            ArrayAdapter<String> aa = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner, boys);
             aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(aa);
 
@@ -164,13 +166,13 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
                 String itemdrop = etDropPlace.getText().toString();
 
                 if (itempick.equalsIgnoreCase("") && itemdrop.equalsIgnoreCase("")) {
-                    Toast.makeText(getApplicationContext(), "Fill all the Details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.fillall, Toast.LENGTH_SHORT).show();
                 } else {
                     Log.d("yyyyy","hg");
                     if (boyid != null) {
                         Log.d("yyyyy","hg");
-                        if (boyid.equalsIgnoreCase("notAvailable")) {
-                            Toast.makeText(getApplicationContext(), "Choose boy id for delivery", Toast.LENGTH_SHORT).show();
+                        if (boyid.equalsIgnoreCase(getString(R.string.notavail))) {
+                            Toast.makeText(getApplicationContext(), R.string.chooseboyid, Toast.LENGTH_SHORT).show();
                         } else {
                             Log.d("yyyyy","hg");
 

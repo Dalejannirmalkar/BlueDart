@@ -29,7 +29,8 @@
             android:label="Login" />
         <activity
             android:name=".PrograssTask"
-            android:label="Delivery Details" />
+            android:label="Delivery Details"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".Spalsh">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

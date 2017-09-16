@@ -7,6 +7,9 @@
     <dimen name="fifty">50dp</dimen>
     <dimen name="sixty">60dp</dimen>
     <dimen name="ten">10dp</dimen>
+    <dimen name="twelve">10dp</dimen>
     <dimen name="five">5dp</dimen>
     <dimen name="textsize">18sp</dimen>
+    <dimen name="tsize">20sp</dimen>
+    <dimen name="padd">5dip</dimen>
 </resources>

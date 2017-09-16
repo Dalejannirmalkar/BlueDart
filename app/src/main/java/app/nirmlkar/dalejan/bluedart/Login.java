@@ -18,15 +18,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     String[] dBoyPass;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        overridePendingTransition(R.anim.left,R.anim.anim2);
+        overridePendingTransition(R.anim.left, R.anim.anim2);
         blueDartDatabase = new BlueDartDatabase(getApplicationContext());
-
 
 
         int i = 0;
@@ -54,7 +52,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-
     @Override
     public void onClick(View view) {
 
@@ -64,42 +61,53 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         switch (view.getId()) {
 
             case R.id.login: {
-
-                if (email.equalsIgnoreCase("dalejan")) {
-                    if (pass.equals("dalejan")) {
-                        Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
-                        i1.putExtra("who", "manager");
-                        startActivity(i1);
-                        Toast.makeText(getApplicationContext(), "Login Sucssesfull as manager", Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                }
                 if (email.equalsIgnoreCase("")) {
-                    Toast.makeText(getApplicationContext(), "Email and Password not match", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.plsenteremail, Toast.LENGTH_SHORT).show();
 
                 }
-                else {
+                if (pass.equalsIgnoreCase("")) {
+                    Toast.makeText(getApplicationContext(), R.string.plsenterpass, Toast.LENGTH_SHORT).show();
 
-                    if(dBoyEmail.length != 0) {
+                } else {
+                    if (email.equalsIgnoreCase(getString(R.string.managerda)) || pass.equalsIgnoreCase(getString(R.string.managerda))) {
+                        if (pass.equals(getString(R.string.managerda)) && email.equalsIgnoreCase(getString(R.string.managerda))) {
+                            Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
+                            i1.putExtra(getString(R.string.who), getString(R.string.manager));
+                            startActivity(i1);
+                            Toast.makeText(getApplicationContext(), R.string.sucsses, Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), R.string.invalid, Toast.LENGTH_SHORT).show();
 
-                    for (int i = 0; i < dBoyEmail.length; i++) {
+                        }
+                    } else {
 
-                        if (email.equalsIgnoreCase(dBoyEmail[i])) {
+                        if (dBoyEmail.length != 0) {
 
-                            if (pass.equals(dBoyPass[i])) {
+                            for (int i = 0; i < dBoyEmail.length; i++) {
 
-                                Intent i2 = new Intent(getApplicationContext(), DeliveryboyScreen.class);
-                                i2.putExtra("who", dboyid[i]);
-                                startActivity(i2);
-                                Toast.makeText(getApplicationContext(), "Login Sucssesfull as Delivery Boy", Toast.LENGTH_SHORT).show();
-                                finish();
+                                if (email.equalsIgnoreCase(dBoyEmail[i])) {
+
+                                    if (pass.equals(dBoyPass[i])) {
+
+                                        Intent i2 = new Intent(getApplicationContext(), DeliveryboyScreen.class);
+                                        i2.putExtra(getString(R.string.who), dboyid[i]);
+                                        startActivity(i2);
+                                        Toast.makeText(getApplicationContext(), R.string.dloginsu, Toast.LENGTH_SHORT).show();
+                                        finish();
+
+                                    }
+
+                                }
 
                             }
-                        }
 
+                        } else {
+                            Toast.makeText(getApplicationContext(), R.string.invalid, Toast.LENGTH_SHORT).show();
+
+                        }
                     }
 
-                }
                 }
 
 

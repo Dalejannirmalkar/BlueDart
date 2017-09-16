@@ -4,5 +4,5 @@
     android:layout_height="match_parent">
     <corners android:radius="50dp"/>
     <stroke android:color="#6A1B9A" android:width="2dp"/>
-<gradient android:startColor="#ffffff" android:endColor="#ffffff" android:centerColor="#ff" />
+<gradient android:startColor="#ffffff" android:endColor="#ffffff" android:centerColor="#ffffff" />
 </shape>

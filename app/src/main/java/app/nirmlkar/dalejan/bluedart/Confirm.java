@@ -16,6 +16,7 @@ public class Confirm extends AppCompatActivity {
     BlueDartDatabase blueDartDatabase;
     String itemid="";
     double latitude,longitude;
+    String who;
 
 
 
@@ -36,7 +37,7 @@ public class Confirm extends AppCompatActivity {
         btlocation=findViewById(R.id.btcboylocation);
         Intent i1=getIntent();
         String id=i1.getStringExtra("id");
-        String who=i1.getStringExtra("who");
+         who=i1.getStringExtra("who");
 
         blueDartDatabase=new BlueDartDatabase(getApplicationContext());
 
@@ -81,7 +82,7 @@ public class Confirm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i1=new Intent(getApplicationContext(),LocationAction.class);
-
+                i1.putExtra("who",who);
                 startActivity(i1);
 
             }
@@ -90,10 +91,20 @@ public class Confirm extends AppCompatActivity {
          btback.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 startActivity(new Intent(getApplicationContext(),Login.class));
-                 finish();
+                 if (who.equalsIgnoreCase("delivery")){
+                     startActivity(new Intent(getApplicationContext(),DeliveryboyScreen.class));
+                 }
+                 else {
+                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                 }
              }
          });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
 
     }
 }

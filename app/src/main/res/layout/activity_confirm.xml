@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/background"
     android:layout_height="match_parent"
     tools:context="app.nirmlkar.dalejan.bluedart.Confirm">
 
@@ -17,6 +18,7 @@
             <EditText
                 android:id="@+id/ecitemname"
                 android:focusable="false"
+                android:hint="@string/itemname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -32,6 +34,7 @@
             <EditText
 
                 android:id="@+id/ecboyid"
+                android:hint="@string/boyid"
                 android:inputType="textEmailSubject"
                 android:focusable="false"
                 style="@style/editdetailstyle1"
@@ -48,6 +51,7 @@
             <EditText
                 android:id="@+id/ecpickup"
                 android:focusable="false"
+                android:hint="@string/pickup"
                 style="@style/editdetailstyle1"
                 android:inputType="text" />
 
@@ -60,6 +64,7 @@
             <EditText
                 android:id="@+id/ecdrop"
                 android:focusable="false"
+                android:hint="@string/drop"
                 style="@style/editdetailstyle1"
                 android:inputType="text" />
 
@@ -72,6 +77,7 @@
             <EditText
                 android:id="@+id/ecflag"
                 android:focusable="false"
+                android:hint="@string/progress"
                 style="@style/editdetailstyle1"
                 android:inputType="text" />
 
