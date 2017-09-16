@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        overridePendingTransition(R.anim.left,R.anim.anim2);
         blueDartDatabase = new BlueDartDatabase(getApplicationContext());
 
         if (blueDartDatabase.getAllItemProcess() != null) {

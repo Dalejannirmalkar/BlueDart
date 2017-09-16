@@ -20,6 +20,7 @@ public class AddDeliveryBoy extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_delivery_boy);
 
+        overridePendingTransition(R.anim.left,R.anim.anim2);
         eboyname=findViewById(R.id.eboydname);
         eboyemail=findViewById(R.id.eboyemail);
         eboypass=findViewById(R.id.eboypass);

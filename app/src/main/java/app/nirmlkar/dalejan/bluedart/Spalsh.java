@@ -16,6 +16,8 @@ public class Spalsh extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spalsh);
+
+        overridePendingTransition(R.anim.left,R.anim.anim2);
         Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
         ImageView im=findViewById(R.id.logo);
         im.startAnimation(anim);

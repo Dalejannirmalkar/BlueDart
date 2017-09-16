@@ -6,7 +6,7 @@
     tools:context="app.nirmlkar.dalejan.bluedart.PrograssTask">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/forty"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -15,22 +15,22 @@
         <Spinner
 
             android:id="@+id/eitemdname"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/twenty"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginTop="@dimen/ten"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/forty"
             style="@style/myspinner"/>
 
 
       <Spinner
 
           android:id="@+id/sboyid"
-          android:layout_marginRight="20dp"
-          android:layout_marginLeft="20dp"
-          android:layout_marginTop="10dp"
+          android:layout_marginRight="@dimen/twenty"
+          android:layout_marginLeft="@dimen/twenty"
+          android:layout_marginTop="@dimen/ten"
           android:layout_width="match_parent"
-          android:layout_height="40dp"
+          android:layout_height="@dimen/forty"
           style="@style/myspinner"/>
 
 
@@ -81,7 +81,7 @@
       <LinearLayout
           android:orientation="horizontal"
           android:layout_width="wrap_content"
-          android:layout_marginTop="40dp"
+          android:layout_marginTop="@dimen/forty"
           android:layout_height="wrap_content">
           <Button
               android:layout_weight="1"

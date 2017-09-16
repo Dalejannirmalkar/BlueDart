@@ -3,6 +3,7 @@ package app.nirmlkar.dalejan.bluedart;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ public class Confirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
 
+        overridePendingTransition(R.anim.left,R.anim.anim2);
         etitemname = findViewById(R.id.ecitemname);
         etitemboy = findViewById(R.id.ecboyid);
         etpickup = findViewById(R.id.ecpickup);
@@ -48,8 +50,8 @@ public class Confirm extends AppCompatActivity {
 
                 latitude=dget.getLatitude();
                 longitude=dget.getLongitude();
-                LocationAction.latitude=latitude;
-                LocationAction.longitude=longitude;
+
+                Log.d("kkkkk000",latitude+"::"+longitude+" confirm");
 
                 if (dget.getFlag().equalsIgnoreCase("0")){
                     etflag.setText(R.string.progress);

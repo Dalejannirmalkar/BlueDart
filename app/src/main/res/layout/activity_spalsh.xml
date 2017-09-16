@@ -6,12 +6,12 @@
     tools:context="app.nirmlkar.dalejan.bluedart.Spalsh">
 <ImageView
     android:id="@+id/logo"
-    android:layout_marginRight="20dp"
-    android:layout_marginLeft="50dp"
+    android:layout_marginRight="@dimen/twenty"
+    android:layout_marginLeft="@dimen/fifty"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:src="@drawable/bluedart"
-    android:layout_marginEnd="20dp"
-    android:layout_marginStart="50dp"
+    android:layout_marginEnd="@dimen/twenty"
+    android:layout_marginStart="@dimen/fifty"
     android:contentDescription="@string/todo" />
 </android.support.constraint.ConstraintLayout>

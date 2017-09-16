@@ -24,6 +24,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        overridePendingTransition(R.anim.left,R.anim.anim2);
         blueDartDatabase = new BlueDartDatabase(getApplicationContext());
 
 

@@ -21,6 +21,9 @@ public class DeliveryboyScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deliveryboy_screen);
+
+
+        overridePendingTransition(R.anim.left,R.anim.anim2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Intent i1 = getIntent();

@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -46,9 +47,9 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prograss_task);
 
+        overridePendingTransition(R.anim.left,R.anim.anim2);
         blueDartDatabase = new BlueDartDatabase(getApplicationContext());
 
-        etitemName = findViewById(R.id.eitemdname);
         etPickupPlace = findViewById(R.id.eitempick);
         etDropPlace = findViewById(R.id.eitemdrop);
         btitemsubmit = findViewById(R.id.btitemsubmit);
@@ -126,6 +127,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        etitemName = findViewById(R.id.eitemdname);
         spinner = findViewById(R.id.sboyid);
 
         ArrayAdapter<String> aa1 = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, item_n);
@@ -142,8 +144,11 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
             spinner.setAdapter(aa);
 
         }
-        spinner.setOnItemSelectedListener(this);
-        etitemName.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(PrograssTask.this);
+        etitemName.setOnItemSelectedListener(PrograssTask.this);
+
+
+
 
     }
 
@@ -158,19 +163,26 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
                 String itempick = etPickupPlace.getText().toString();
                 String itemdrop = etDropPlace.getText().toString();
 
-                if (itemname.equalsIgnoreCase("") && itempick.equalsIgnoreCase("") && itemdrop.equalsIgnoreCase("")) {
+                if (itempick.equalsIgnoreCase("") && itemdrop.equalsIgnoreCase("")) {
                     Toast.makeText(getApplicationContext(), "Fill all the Details", Toast.LENGTH_SHORT).show();
                 } else {
+                    Log.d("yyyyy","hg");
                     if (boyid != null) {
+                        Log.d("yyyyy","hg");
                         if (boyid.equalsIgnoreCase("notAvailable")) {
                             Toast.makeText(getApplicationContext(), "Choose boy id for delivery", Toast.LENGTH_SHORT).show();
                         } else {
+                            Log.d("yyyyy","hg");
 
                             ItemDetails itemDetails = new ItemDetails();
                             itemDetails.setItem_name(itemname);
                             itemDetails.setPickup_place(itempick);
                             itemDetails.setDrop_place(itemdrop);
                             itemDetails.setBoy_id(boyid);
+
+                            Log.d("kkkkk000",latitude+" progress");
+
+                            Log.d("kkkkk000",longitude+" progress");
                             itemDetails.setLatitude(latitude);
                             itemDetails.setLongitude(longitude);
                             itemDetails.setFlag("0");
@@ -195,20 +207,8 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (view.getId()) {
-
-            case R.id.sboyid: {
-                    boyid = boys[i];
-                    break;
-
-            }
-            case R.id.eitemdname:{
-                itemname=item_n[i];
-                break;
-
-            }
-
-        }
+      boyid= (String) adapterView.getItemAtPosition(i);
+      itemname= (String) adapterView.getItemAtPosition(i);
     }
 
     @Override
