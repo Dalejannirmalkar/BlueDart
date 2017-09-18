@@ -203,6 +203,7 @@ public class PrograssTask extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btitemcancle: {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
                 break;
             }
         }
