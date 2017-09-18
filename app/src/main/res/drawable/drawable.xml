@@ -3,6 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <corners android:radius="50dp"/>
-    <stroke android:color="#6A1B9A" android:width="2dp"/>
-<gradient android:startColor="#ffffff" android:endColor="#ffffff" android:centerColor="#ffffff" />
+    <stroke android:color="@color/colorPrimary" android:width="@dimen/border"/>
+<gradient android:startColor="@color/white" android:endColor="@color/white" android:centerColor="@color/white" />
 </shape>

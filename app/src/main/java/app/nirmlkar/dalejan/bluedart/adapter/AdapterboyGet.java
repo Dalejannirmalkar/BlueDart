@@ -35,7 +35,7 @@ public class AdapterboyGet extends  RecyclerView.Adapter<AdapterboyGet.Listwork>
         }
     }
 
-    AdapterboyGet(List<ItemDetails> itemDetails, Context context) {
+   public AdapterboyGet(List<ItemDetails> itemDetails, Context context) {
         this.context=context;
         itemDetailsa = new ItemDetails[itemDetails.toArray().length];
         int i = 0;

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import app.nirmlkar.dalejan.bluedart.activity.Confirm;
-import app.nirmlkar.dalejan.bluedart.ItemDetails;
+import app.nirmlkar.dalejan.bluedart.generic.ItemDetails;
 import app.nirmlkar.dalejan.bluedart.R;
 
 
@@ -37,7 +37,7 @@ public class AdapterItemDetails extends RecyclerView.Adapter<AdapterItemDetails.
         }
     }
 
-    AdapterItemDetails(List<ItemDetails> itemDetails, Context context) {
+  public   AdapterItemDetails(List<ItemDetails> itemDetails, Context context) {
         this.context=context;
         itemDetailsa = new ItemDetails[itemDetails.toArray().length];
         int i = 0;

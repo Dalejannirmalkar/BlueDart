@@ -12,8 +12,8 @@ import java.util.List;
 
 
 
-class DirectionsJSONParser {
-    List<List<HashMap<String,String>>> parse(JSONObject jObject){
+public class DirectionsJSONParser {
+    public List<List<HashMap<String,String>>> parse(JSONObject jObject){
 
         List<List<HashMap<String, String>>> routes = new ArrayList<>() ;
         JSONArray jRoutes;

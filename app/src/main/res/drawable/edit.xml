@@ -2,6 +2,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
-<stroke android:color="#6A1B9A" android:width="1dp"/>
-<gradient android:startColor="#ffffff" android:endColor="#ffffff" android:centerColor="#ffffff" />
+<stroke android:color="@color/colorPrimary" android:width="@dimen/border"/>
+<gradient android:startColor="@color/white" android:endColor="@color/white" android:centerColor="@color/white" />
 </shape>

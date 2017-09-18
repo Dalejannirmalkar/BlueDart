@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import app.nirmlkar.dalejan.bluedart.DirectionsJSONParser;
+import app.nirmlkar.dalejan.bluedart.location.DirectionsJSONParser;
 import app.nirmlkar.dalejan.bluedart.R;
 
 /*public class LocationAction extends FragmentActivity implements OnMapReadyCallback {
