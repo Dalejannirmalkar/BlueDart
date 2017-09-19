@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import app.nirmlkar.dalejan.bluedart.Database.BlueDartDatabase;
 import app.nirmlkar.dalejan.bluedart.R;
+import app.nirmlkar.dalejan.bluedart.adapter.AdapterItemDetails;
 import app.nirmlkar.dalejan.bluedart.adapter.AdapterboyGet;
 
 public class DeliveryboyScreen extends AppCompatActivity {
